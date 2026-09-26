@@ -323,7 +323,14 @@ class ConnectionManager:
                 event = Event(
                     name=ConnectionName.VISONIC, event_type=EventType.REQUEST_CONNECT
                 )
-                self.proxy.events.fire_event_later(1, event)
+                try:
+                    delay = max(1, int(self.proxy.config.STEALTH_EXIT_RECONNECT_DELAY))
+                except (AttributeError, TypeError, ValueError):
+                    delay = 1
+                _LOGGER.info(
+                    "Visonic reconnection scheduled in %ss", delay, extra=MsgLogLevel.L1
+                )
+                self.proxy.events.fire_event_later(delay, event)
 
     async def stealth_mode_timeout(self):
         """Timeout for stealth mode to revert if no message from HA."""

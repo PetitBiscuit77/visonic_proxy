@@ -32,6 +32,7 @@ class Config:
     SSL_CERT_PATH = "certs"  # path based from dir of this file
 
     VISONIC_RECONNECT_INTERVAL = 10  # Freq CM will reconnect Visonic after disconnect
+    STEALTH_EXIT_RECONNECT_DELAY = 30  # Delay (s) before reconnecting Visonic after leaving stealth/download mode (upstream: 1s)
     KEEPALIVE_TIMER = 32  # Send Keepalive if no messages in 30 seconds
     WATCHDOG_TIMEOUT = 120  # If no received message on connection for 120s, kill it.
     ACK_TIMEOUT = 5  # How long to wait for ACK before continuing

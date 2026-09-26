@@ -1,5 +1,4 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
-image: "ghcr.io/msp1974/visonic-proxy-{arch}"
 build_from:
   aarch64: ghcr.io/home-assistant/aarch64-base-python:3.13-alpine3.21
   amd64: ghcr.io/home-assistant/amd64-base-python:3.13-alpine3.21

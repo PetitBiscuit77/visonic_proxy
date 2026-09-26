@@ -1,8 +1,8 @@
-name: "Visonic Proxy"
+name: "Visonic Proxy (stealth delay fix)"
 description: "Visonic Proxy Server for Using Powerlink with Visonic Integration"
-version: "1.1.2"
+version: "1.1.2-sd1"
 slug: "visonic_proxy"
-url: https://github.com/msp1974/visonic_proxy
+url: https://github.com/PetitBiscuit77/visonic_proxy
 init: false
 arch:
   - aarch64
@@ -32,6 +32,7 @@ options:
   websocket_auth_key: ""
   message_log_level: 1
   log_level: "info"
+  stealth_exit_reconnect_delay: 30
   
 schema:
   visonic_host: str
@@ -40,6 +41,7 @@ schema:
   websocket_auth_key: str
   message_log_level: "int(1,5)"
   log_level: list(debug|info|warning|error|critical)?
+  stealth_exit_reconnect_delay: "int(1,300)?"
   
   
   
